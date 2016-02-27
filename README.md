@@ -3,9 +3,9 @@ Alloy Model Study: REST API
 
 Learning project on the use of Alloy.Model with REST API.
 
-### API Mock Server
+### Stub API Server
 
-* [umi-uyura/AlloyModelStudyRestMock](https://github.com/umi-uyura/AlloyModelStudyRestMock)
+* [umi-uyura/AlloyModelStudyRestStub](https://github.com/umi-uyura/AlloyModelStudyRestStub)
 
 
 Dependency
