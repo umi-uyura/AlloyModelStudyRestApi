@@ -10,7 +10,7 @@ exports.definition = {
       collection_name: "memo",
       "idAttribute": "id"
     },
-    "URL": "http://127.0.0.1:4321/memos",
+    "URL": Alloy.CFG.API_URL,
     //"headers": {
     //},
     //"parentNode": "memos",

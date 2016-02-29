@@ -1,12 +1,18 @@
 {
-	"global": {},
-	"env:development": {},
-	"env:test": {},
-	"env:production": {},
-	"os:android": {},
-	"os:blackberry": {},
-	"os:ios": {},
-	"os:mobileweb": {},
-	"os:windows": {},
-	"dependencies": {}
+  "global": {},
+  "env:development": {},
+  "env:test": {},
+  "env:production": {},
+  "os:android": {},
+  "os:android env:development": {
+    "API_URL": "http://10.0.3.2:4321/memos"
+  },
+  "os:blackberry": {},
+  "os:ios": {},
+  "os:ios env:development": {
+    "API_URL": "http://127.0.0.1:4321/memos"
+  },
+  "os:mobileweb": {},
+  "os:windows": {},
+  "dependencies": {}
 }

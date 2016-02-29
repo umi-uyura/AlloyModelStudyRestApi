@@ -3,6 +3,7 @@
 var dialogs = require('alloy/dialogs');
 
 var memos = Alloy.Collections.memo;
+var API_URL = Alloy.CFG.API_URL;
 
 function doOpen() {
   memos.fetch();
