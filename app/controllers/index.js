@@ -6,7 +6,14 @@ var memos = Alloy.Collections.memo;
 var API_URL = Alloy.CFG.API_URL;
 
 function doOpen() {
-  memos.fetch();
+  memos.fetch({
+    success : function(models, response){
+      Ti.API.debug('memo fetch() - success = ' + models + ' / ' + response);
+    },
+    error : function(models, response){
+      Ti.API.debug('memo fetch() - error = ' + models + ' / ' + response);
+    }
+  });
 }
 
 function addText() {
@@ -18,7 +25,14 @@ function addText() {
 
   var m = Alloy.createModel('memo', params);
 
-  m.save();
+  m.save({}, {
+    success : function(model, response){
+      Ti.API.debug('memo save-add() - success = ' + model + ' / ' + response);
+    },
+    error : function(model, response){
+      Ti.API.debug('memo save-add() - error = ' + model + ' / ' + response);
+    }
+  });
   memos.add(m);
 
   $.memoText.setValue('');
@@ -49,7 +63,14 @@ function clickItem(e) {
       if (m.length) {
         var priority = '*' + m[0].get('priority');
         m[0].set({priority: priority});
-        m[0].save();
+        m[0].save({}, {
+          success : function(model, response){
+            Ti.API.debug('memo save-update() - success = ' + model + ' / ' + response);
+          },
+          error : function(model, response){
+            Ti.API.debug('memo save-update() - error = ' + model + ' / ' + response);
+          }
+        });
         memos.sort();
       }
       break;
@@ -60,7 +81,14 @@ function clickItem(e) {
         callback: function() {
           var m = memos.where({id: itemId});
           if (m.length) {
-            m[0].destroy();
+            m[0].destroy({
+              success : function(model, response){
+                Ti.API.debug('memo destroy() - success = ' + model + ' / ' + response);
+              },
+              error : function(model, response){
+                Ti.API.debug('memo destroy() - error = ' + model + ' / ' + response);
+              }
+            });
           }
         }
       });
