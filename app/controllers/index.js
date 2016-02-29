@@ -29,10 +29,6 @@ function clickItem(e) {
   var itemId = e.itemId;
   var text = $.memoList.sections[e.sectionIndex].items[e.itemIndex].properties.title;
 
-  if (OS_ANDROID) {
-    itemId = parseInt(itemId);
-  }
-
   var opt = {
     title: 'Action for: ' + text,
     options: [
