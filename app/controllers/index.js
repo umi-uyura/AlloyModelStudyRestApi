@@ -16,6 +16,10 @@ function doOpen() {
   });
 }
 
+function doClose() {
+  $.destroy();
+}
+
 function addText() {
   var txt = $.memoText.getValue();
   var params = {
